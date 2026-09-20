@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>롯데하이마트 안산선부점 특별 행사 상담예약</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #FBF9F4;
+  --surface: #FFFFFF;
+  --surface-2: #F9F7F2;
+  --ink: #1B1B1B;
+  --text: #4A4A4A;
+  --muted: #6E6A61;
+  --red: #C8382B;
+  --red-dark: #9F2A1F;
+  --red-glow: rgba(200, 56, 43, .28);
+  --gold: #B08F2E;
+  --gold-2: #C9AB4B;
+  --gold-text: #8A6D1C;
+  --gold-line: #EADFB9;
+  --gold-soft: #F5EDD3;
+  --btn-dark: #1B1B1B;
+  --btn-dark-fg: #F3E6B8;
+  --bar-bg: rgba(255, 255, 255, .94);
+  --input-bg: #FAF9F6;
+  --input-border: #E6D9AE;
+  --check: #444444;
+  --shadow: 0 14px 34px rgba(120, 90, 20, .10);
+  --kakao: #FAE54B;
+  --kakao-ink: #3A1D1D;
+  --naver: #4FBE5E;
+  --tel: #3B8B63;
+  --overlay: rgba(20, 16, 10, .5);
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #16130F;
+    --surface: #201C17;
+    --surface-2: #282219;
+    --ink: #F4EEE2;
+    --text: #D6CDBB;
+    --muted: #A79D8A;
+    --red: #D9483A;
+    --red-dark: #A93225;
+    --red-glow: rgba(217, 72, 58, .30);
+    --gold: #D6B65A;
+    --gold-2: #D6B65A;
+    --gold-text: #E2C574;
+    --gold-line: #3D3424;
+    --gold-soft: #2D2617;
+    --btn-dark: #F1E8D2;
+    --btn-dark-fg: #1B1B1B;
+    --bar-bg: rgba(22, 19, 15, .94);
+    --input-bg: #1B1712;
+    --input-border: #4A3F2A;
+    --check: #E6DDC8;
+    --shadow: 0 14px 34px rgba(0, 0, 0, .35);
+    --naver: #3FA84E;
+    --tel: #2F7A54;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #16130F;
+  --surface: #201C17;
+  --surface-2: #282219;
+  --ink: #F4EEE2;
+  --text: #D6CDBB;
+  --muted: #A79D8A;
+  --red: #D9483A;
+  --red-dark: #A93225;
+  --red-glow: rgba(217, 72, 58, .30);
+  --gold: #D6B65A;
+  --gold-2: #D6B65A;
+  --gold-text: #E2C574;
+  --gold-line: #3D3424;
+  --gold-soft: #2D2617;
+  --btn-dark: #F1E8D2;
+  --btn-dark-fg: #1B1B1B;
+  --bar-bg: rgba(22, 19, 15, .94);
+  --input-bg: #1B1712;
+  --input-border: #4A3F2A;
+  --check: #E6DDC8;
+  --shadow: 0 14px 34px rgba(0, 0, 0, .35);
+  --naver: #3FA84E;
+  --tel: #2F7A54;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 80px);
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+  padding-bottom: 140px;
+}
+h1, h2, h3, p, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+[hidden] { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--gold-2); outline-offset: 2px; }
+
+.wrap { max-width: 520px; margin: 0 auto; padding: 0 16px; }
+
+/* Header */
+.hdr {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: var(--bar-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gold-line);
+}
+.hdr-in {
+  max-width: 520px; margin: 0 auto; padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.logo { font-size: 18px; font-weight: 900; letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
+.logo span { color: var(--red); }
+.tabs {
+  display: inline-flex; padding: 4px; gap: 2px;
+  background: var(--gold-soft); border: 1px solid var(--gold-line); border-radius: 999px;
+}
+.tab {
+  border: 0; background: transparent; color: var(--muted);
+  font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+}
+.tab.is-on { background: var(--surface); color: var(--gold-text); box-shadow: 0 2px 8px rgba(120, 90, 20, .14); }
+
+/* Hero */
+.hero { text-align: center; padding-top: 30px; }
+.cd { display: flex; justify-content: center; }
+.cd-pill {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--red); color: #fff; border-radius: 999px;
+  padding: 7px 8px 7px 20px; font-weight: 700; font-size: 14px;
+  box-shadow: 0 10px 24px var(--red-glow);
+}
+.cd-time {
+  background: var(--red-dark); border-radius: 999px; padding: 6px 14px;
+  font-variant-numeric: tabular-nums; letter-spacing: .06em; font-weight: 800;
+}
+.kicker {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 24px; color: var(--gold-text); font-weight: 700; font-size: 14px;
+}
+.kicker::before, .kicker::after { content: ""; width: 16px; height: 2px; background: var(--gold); border-radius: 2px; }
+.hero h1 {
+  margin-top: 16px; font-size: 25px; font-weight: 800; letter-spacing: -0.05em; color: var(--ink); line-height: 1.35;
+}
+.badge {
+  display: table; margin: 16px auto 0; background: var(--red); color: #fff;
+  font-weight: 800; font-size: 20px; letter-spacing: -0.04em; padding: 9px 24px;
+  border-radius: 14px; box-shadow: 0 12px 26px var(--red-glow);
+}
+.lead { margin-top: 26px; font-size: 14px; font-weight: 500; line-height: 1.95; color: var(--text); }
+.period {
+  display: table; margin: 24px auto 0; background: var(--gold-soft);
+  border: 1.5px solid var(--gold-2); color: var(--gold-text);
+  font-weight: 800; font-size: 14px; padding: 9px 20px; border-radius: 999px;
+}
+.cta-ring {
+  margin-top: 28px; background: var(--surface); border: 1px solid var(--gold-line);
+  border-radius: 999px; padding: 9px; box-shadow: var(--shadow);
+}
+.cta-dark {
+  display: block; width: 100%; height: 52px; border: 0; border-radius: 999px;
+  background: var(--btn-dark); color: var(--btn-dark-fg);
+  font-size: 16px; font-weight: 800; letter-spacing: -0.02em;
+}
+.cta-dark:active, .submit:active, .dock-main:active { transform: scale(.985); }
+
+/* Banner */
+.banner {
+  position: relative; overflow: hidden; margin-top: 34px; height: 196px;
+  border: 4px solid #6B5623; border-radius: 28px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 226, 150, .55), transparent 46%),
+    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, .20), transparent 32%),
+    linear-gradient(165deg, #6A7B9E, #3A4560 55%, #252B3D);
+  display: grid; place-items: center; text-align: center; color: #F6EBC8;
+}
+.banner::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 74% 62%, rgba(255, 224, 140, .55) 0 3px, transparent 4px),
+    radial-gradient(circle at 88% 34%, rgba(255, 224, 140, .45) 0 2px, transparent 3px),
+    radial-gradient(circle at 12% 70%, rgba(255, 224, 140, .40) 0 2px, transparent 3px),
+    radial-gradient(circle at 40% 18%, rgba(255, 255, 255, .35) 0 2px, transparent 3px),
+    radial-gradient(circle at 60% 85%, rgba(255, 224, 140, .35) 0 3px, transparent 4px);
+}
+.b-top { position: relative; font-size: 13px; font-weight: 700; letter-spacing: .02em; opacity: .92; }
+.b-main {
+  position: relative; margin: 4px 0; font-size: 44px; font-weight: 900; letter-spacing: -0.05em; line-height: 1.15;
+  background: linear-gradient(180deg, #FBE9AE, #D2AB4F 58%, #93702A);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, .35));
+}
+.b-sub { position: relative; font-size: 14px; font-weight: 700; opacity: .95; }
+
+/* Cards */
+.card {
+  background: var(--surface); border: 1px solid var(--gold-line); border-radius: 28px;
+  box-shadow: var(--shadow); padding: 34px 22px 24px; margin-top: 28px;
+}
+.card-title { text-align: center; color: var(--gold-text); font-size: 21px; font-weight: 800; letter-spacing: -0.04em; }
+.hl { margin-top: 26px; display: grid; gap: 22px; }
+.hl li { display: flex; align-items: center; gap: 14px; font-weight: 800; font-size: 15px; line-height: 1.5; color: var(--ink); letter-spacing: -0.03em; }
+.hl svg { flex: none; width: 28px; height: 28px; color: var(--check); }
+.btn-outline {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; min-height: 56px; margin-top: 30px; padding: 12px 16px;
+  border: 2px solid var(--gold-2); border-radius: 20px; background: transparent;
+  color: var(--gold-text); font-size: 15px; font-weight: 800; letter-spacing: -0.03em;
+}
+.btn-outline svg { width: 18px; height: 18px; }
+
+.ch-head { text-align: center; }
+.pill-label {
+  display: inline-block; padding: 8px 22px; border-radius: 999px;
+  background: var(--gold-soft); border: 1px solid var(--gold-line);
+  color: var(--gold-text); font-size: 12.5px; font-weight: 800; letter-spacing: .14em;
+}
+.ch-head h2 { margin-top: 18px; font-size: 21px; font-weight: 800; letter-spacing: -0.05em; color: var(--ink); line-height: 1.5; }
+.ch-head p { margin-top: 14px; font-size: 14px; line-height: 1.85; font-weight: 500; color: var(--muted); }
+.ch-list { margin-top: 26px; display: grid; gap: 12px; }
+.ch {
+  display: flex; align-items: center; gap: 16px; padding: 18px 20px;
+  background: var(--surface-2); border: 1px solid var(--gold-line); border-radius: 24px;
+}
+.ch-ic { flex: none; width: 46px; height: 46px; border-radius: 13px; overflow: hidden; display: grid; place-items: center; }
+.ch-ic svg { width: 46px; height: 46px; display: block; }
+.ch-tx { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.ch-tx b { font-size: 16px; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; }
+.ch-tx small { font-size: 13px; font-weight: 500; color: var(--muted); }
+.ch-ar { flex: none; color: var(--gold); }
+.ch-ar svg { width: 22px; height: 22px; display: block; }
+
+.news {
+  margin-top: 26px; background: var(--surface-2); border: 1px solid var(--gold-line);
+  border-radius: 26px; padding: 22px 20px;
+}
+.tag { display: inline-flex; align-items: center; gap: 6px; background: var(--red); color: #fff; font-size: 14px; font-weight: 800; padding: 7px 16px; border-radius: 999px; }
+.news h3 { margin-top: 16px; font-size: 19px; font-weight: 800; letter-spacing: -0.04em; color: var(--ink); }
+.news ul { margin-top: 16px; display: grid; gap: 14px; }
+.news li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; font-weight: 700; line-height: 1.55; color: var(--ink); letter-spacing: -0.03em; }
+.news li i { font-style: normal; font-size: 22px; line-height: 1.3; flex: none; }
+.news .btn-outline { justify-content: space-between; margin-top: 22px; min-height: 52px; padding: 12px 20px; border-radius: 18px; }
+
+/* Reservation form */
+.reserve {
+  position: relative; overflow: hidden; margin-top: 30px;
+  background: var(--surface); border: 1px solid var(--gold-line); border-radius: 28px; box-shadow: var(--shadow);
+}
+.reserve-bar { height: 7px; background: linear-gradient(90deg, #EBDDA6, #C9AB4B 60%, #A98A2F); }
+.reserve-body { padding: 30px 22px 30px; }
+.reserve h2 { text-align: center; font-size: 30px; font-weight: 900; letter-spacing: -0.06em; color: var(--ink); }
+.rsv-sub { margin-top: 16px; text-align: center; font-size: 15px; font-weight: 800; line-height: 1.7; color: var(--red); letter-spacing: -0.03em; }
+.field { margin-top: 24px; }
+.field label, .field .lab { display: block; margin-bottom: 10px; font-size: 15px; font-weight: 800; color: var(--ink); }
+.field input[type="text"], .field input[type="tel"], .field select {
+  width: 100%; height: 58px; padding: 0 20px; border-radius: 20px;
+  border: 1.5px solid var(--input-border); background: var(--input-bg); color: var(--ink);
+  font-family: inherit; font-size: 16px; font-weight: 500; letter-spacing: -0.02em;
+  -webkit-appearance: none; appearance: none;
+}
+.field input::placeholder { color: var(--muted); opacity: .8; }
+.field input[aria-invalid="true"], .field select[aria-invalid="true"] { border-color: var(--red); }
+.select { position: relative; }
+.select svg { position: absolute; right: 18px; top: 50%; width: 20px; height: 20px; transform: translateY(-50%); pointer-events: none; color: var(--ink); }
+.err { margin-top: 8px; font-size: 13px; font-weight: 700; color: var(--red); }
+
+.extras { margin-top: 24px; }
+.extras-btn {
+  width: 100%; min-height: 58px; padding: 12px 16px; border-radius: 20px;
+  border: 1.5px solid var(--input-border); background: var(--input-bg);
+  color: var(--gold-text); font-size: 15px; font-weight: 800; letter-spacing: -0.03em;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.extras-btn .caret { display: inline-block; transition: transform .2s; }
+.extras-btn[aria-expanded="true"] .caret { transform: rotate(180deg); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px 2px 2px; }
+.chip { position: relative; }
+.chip input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.chip span {
+  display: inline-block; padding: 9px 16px; border-radius: 999px;
+  border: 1.5px solid var(--input-border); background: var(--surface);
+  font-size: 14px; font-weight: 700; color: var(--text);
+}
+.chip input:checked + span { background: var(--gold-soft); border-color: var(--gold-2); color: var(--gold-text); }
+.chip input:focus-visible + span { outline: 3px solid var(--gold-2); outline-offset: 2px; }
+
+.consent { margin-top: 28px; display: flex; align-items: center; gap: 12px; }
+.check { flex: 1; display: flex; align-items: center; gap: 14px; cursor: pointer; }
+.check input {
+  flex: none; width: 28px; height: 28px; margin: 0; border-radius: 9px;
+  border: 2px solid var(--muted); background: var(--surface);
+  -webkit-appearance: none; appearance: none; display: grid; place-items: center; cursor: pointer;
+}
+.check input:checked {
+  background: var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 20px no-repeat;
+  border-color: var(--red);
+}
+.check input[aria-invalid="true"] { border-color: var(--red); }
+.check-text { flex: 1; text-align: center; font-size: 14.5px; font-weight: 600; line-height: 1.6; color: var(--text); }
+.help {
+  flex: none; width: 36px; height: 36px; border: 0; border-radius: 50%;
+  background: var(--gold-soft); color: var(--gold-text); font-size: 16px; font-weight: 900;
+}
+.submit {
+  display: block; width: 100%; height: 54px; margin-top: 26px; border: 0; border-radius: 999px;
+  background: var(--btn-dark); color: var(--btn-dark-fg); font-size: 16px; font-weight: 800; letter-spacing: -0.03em;
+}
+.submit:disabled { opacity: .6; }
+
+/* Benefits view */
+.benefit { display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; border-top: 1px solid var(--gold-line); }
+.benefit:first-of-type { border-top: 0; padding-top: 6px; }
+.b-ic { flex: none; width: 48px; height: 48px; border-radius: 16px; background: var(--gold-soft); display: grid; place-items: center; font-size: 24px; }
+.benefit h3 { font-size: 16px; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; }
+.benefit p { margin-top: 4px; font-size: 14px; font-weight: 500; line-height: 1.75; color: var(--muted); }
+.sec-sub { margin-top: 12px; text-align: center; font-size: 14px; font-weight: 500; line-height: 1.8; color: var(--muted); }
+.benefit-list { margin-top: 24px; }
+.notice { margin-top: 20px; padding: 20px; border-radius: 20px; background: var(--surface-2); border: 1px solid var(--gold-line); }
+.notice h3 { font-size: 14px; font-weight: 800; color: var(--gold-text); }
+.notice li { margin-top: 8px; padding-left: 14px; position: relative; font-size: 13px; line-height: 1.7; color: var(--muted); font-weight: 500; }
+.notice li::before { content: ""; position: absolute; left: 0; top: .72em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+
+/* Footer */
+.foot { margin-top: 44px; padding: 44px 0 8px; border-top: 1px solid var(--gold-line); text-align: center; }
+.foot h2 { font-size: 18px; font-weight: 800; letter-spacing: -0.04em; color: var(--gold-text); }
+.foot p { margin-top: 14px; font-size: 14.5px; font-weight: 700; color: var(--text); }
+.foot p a { font-size: 18px; font-weight: 800; color: var(--ink); }
+.foot .disc { margin-top: 26px; font-size: 12.5px; font-weight: 500; line-height: 1.7; color: var(--muted); }
+
+/* Dock */
+.dock {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  background: var(--bar-bg); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-top: 1px solid var(--gold-line);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+}
+.dock-in { max-width: 520px; margin: 0 auto; }
+.dock-main {
+  display: block; width: 100%; height: 46px; border: 0; border-radius: 12px;
+  background: var(--red); color: #fff; font-size: 16px; font-weight: 800; letter-spacing: -0.02em;
+  box-shadow: 0 6px 16px var(--red-glow);
+}
+.dock-row { margin-top: 8px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.dk {
+  height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-size: 14px; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap;
+}
+.dk svg { width: 18px; height: 18px; flex: none; }
+.dk.kakao { background: var(--kakao); color: var(--kakao-ink); }
+.dk.naver { background: var(--naver); color: #fff; }
+.dk.tel { background: var(--tel); color: #fff; }
+.nlogo { display: inline-grid; place-items: center; width: 18px; height: 18px; font-size: 16px; font-weight: 900; line-height: 1; }
+
+/* Dialog + toast */
+.ovl {
+  position: fixed; inset: 0; z-index: 50; background: var(--overlay);
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.dlg {
+  width: 100%; max-width: 520px; background: var(--surface); color: var(--text);
+  border-radius: 26px 26px 0 0; padding: 28px 24px calc(24px + env(safe-area-inset-bottom, 0px));
+  animation: sheet .22s ease-out;
+}
+.dlg h3 { font-size: 19px; font-weight: 800; letter-spacing: -0.04em; color: var(--ink); }
+#dlg-body { margin-top: 12px; font-size: 14.5px; line-height: 1.75; }
+#dlg-body p + p { margin-top: 8px; }
+#dlg-body ul { display: grid; gap: 8px; }
+#dlg-body li { padding-left: 14px; position: relative; }
+#dlg-body li::before { content: ""; position: absolute; left: 0; top: .7em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.dlg-actions { margin-top: 22px; display: grid; gap: 8px; }
+.dbtn { display: flex; align-items: center; justify-content: center; height: 50px; border-radius: 14px; border: 0; font-size: 15px; font-weight: 800; }
+.dbtn-primary { background: var(--btn-dark); color: var(--btn-dark-fg); }
+.dbtn-ghost { background: var(--gold-soft); color: var(--gold-text); }
+.toast {
+  position: fixed; left: 50%; bottom: calc(140px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
+  z-index: 40; max-width: calc(100% - 32px); background: var(--ink); color: var(--bg);
+  font-size: 13.5px; font-weight: 700; padding: 12px 18px; border-radius: 999px; text-align: center;
+}
+@keyframes sheet { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .dlg { animation: none; }
+  .extras-btn .caret { transition: none; }
+  .cta-dark:active, .submit:active, .dock-main:active { transform: none; }
+}
+@media (min-width: 560px) {
+  .ovl { align-items: center; }
+  .dlg { border-radius: 26px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="logo" href="#" id="logo" aria-label="LOTTE HIMART 홈"><span>LOTTE</span> HIMART</a>
+    <div class="tabs" role="tablist" aria-label="페이지 보기">
+      <button type="button" role="tab" class="tab is-on" id="tab-home" data-view="home" aria-selected="true" aria-controls="view-home">홈</button>
+      <button type="button" role="tab" class="tab" id="tab-benefits" data-view="benefits" aria-selected="false" aria-controls="view-benefits">상세 혜택</button>
+    </div>
+  </div>
+</header>
+
+<!-- HOME -->
+<main id="view-home" class="wrap" role="tabpanel" aria-labelledby="tab-home">
+
+  <section class="hero" aria-label="행사 소개">
+    <div class="cd">
+      <div class="cd-pill">
+        <span id="cd-label">행사 시작까지</span>
+        <span class="cd-time" id="cd-time">00:00:00</span>
+      </div>
+    </div>
+    <p class="kicker">롯데하이마트 안산선부점</p>
+    <h1>단 4일간, 압도적 혜택</h1>
+    <p class="badge">안산선부점 특별 행사</p>
+    <p class="lead">가전은 행사 기간 혜택이 가장 크다는 사실, 알고 계시죠?<br>지금 사전예약하시고 선착순 고객 혜택을 선점하세요.</p>
+    <p class="period">행사기간 : 10월 2일(금) - 5일(월), 단 4일간!</p>
+    <div class="cta-ring">
+      <button type="button" class="cta-dark" data-go="reserve">상담예약하기</button>
+    </div>
+  </section>
+
+  <div class="banner" role="img" aria-label="안산선부점 특별 행사 안내 배너">
+    <div>
+      <p class="b-top">[ 롯데하이마트 안산선부점 ]</p>
+      <p class="b-main">특별 행사</p>
+      <p class="b-sub">10월 2일(금) ~ 5일(월), 단 4일간</p>
+    </div>
+  </div>
+
+  <section class="card" aria-labelledby="hl-title">
+    <h2 class="card-title" id="hl-title">행사 핵심 혜택 요약</h2>
+    <ul class="hl">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 6.5"/></svg><span>다품목 구매 시 브랜드별 추가 지원금 적용</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 6.5"/></svg><span>결제 금액대별 제휴카드 캐시백 혜택</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 6.5"/></svg><span>신혼·입주 고객 대상 특별 추가 할인</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 6.5"/></svg><span>오직 안산선부점만의 단독 행사 혜택</span></li>
+    </ul>
+    <button type="button" class="btn-outline" data-view-go="benefits">자세한 혜택 전체보기
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 5.5l6.5 6.5-6.5 6.5"/></svg>
+    </button>
+  </section>
+
+  <section class="card" aria-labelledby="ch-title">
+    <div class="ch-head">
+      <span class="pill-label">OFFICIAL CHANNELS</span>
+      <h2 id="ch-title">안산선부점 공식<br>채널 &amp; 실시간 소식</h2>
+      <p>네이버 블로그, 인스타그램, 페이스북에서<br>매일 업데이트되는 특별 행사 소식과<br>가전 꿀팁을 만나보세요.</p>
+    </div>
+    <div class="ch-list">
+      <a class="ch" href="#" data-link="blog">
+        <span class="ch-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#4FBE5E"/><path d="M14 35V13h6.4l7.6 11V13h6v22h-6.2L20 24v11z" fill="#fff"/></svg></span>
+        <span class="ch-tx"><b>네이버 블로그</b><small>공식 행사 및 지점 혜택 안내</small></span>
+        <span class="ch-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 5.5l6.5 6.5-6.5 6.5"/></svg></span>
+      </a>
+      <a class="ch" href="#" data-link="instagram">
+        <span class="ch-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F9A03F"/><stop offset=".5" stop-color="#D62976"/><stop offset="1" stop-color="#5B51D8"/></linearGradient></defs><rect width="48" height="48" rx="13" fill="url(#ig)"/><rect x="11" y="11" width="26" height="26" rx="8" fill="none" stroke="#fff" stroke-width="3"/><circle cx="24" cy="24" r="6.2" fill="none" stroke="#fff" stroke-width="3"/><circle cx="31.5" cy="16.5" r="1.8" fill="#fff"/></svg></span>
+        <span class="ch-tx"><b>인스타그램</b><small>생생한 매장 일상 &amp; 릴스 피드</small></span>
+        <span class="ch-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 5.5l6.5 6.5-6.5 6.5"/></svg></span>
+      </a>
+      <a class="ch" href="#" data-link="facebook">
+        <span class="ch-ic"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#3B6FE0"/><path d="M26.5 38V26h4l.7-4.6h-4.7v-3c0-1.3.6-2.4 2.5-2.4H31V12c-.4-.1-1.8-.2-3.3-.2-3.3 0-5.5 2-5.5 5.6v3H18V26h4.2v12z" fill="#fff"/></svg></span>
+        <span class="ch-tx"><b>페이스북</b><small>지점 소식과 행사 안내</small></span>
+        <span class="ch-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 5.5l6.5 6.5-6.5 6.5"/></svg></span>
+      </a>
+    </div>
+
+    <div class="news">
+      <span class="tag"><span aria-hidden="true">📢</span> 소식보기</span>
+      <h3>안산선부점 최신 뉴스</h3>
+      <ul>
+        <li><i aria-hidden="true">🎉</i><span>행사 기간 한정 특별 혜택</span></li>
+        <li><i aria-hidden="true">🗓️</i><span>행사일정: 10월 2일(금)<br>~ 10월 5일(월)</span></li>
+        <li><i aria-hidden="true">✨</i><span>안산선부점 방문 고객<br>단독 행사 혜택</span></li>
+      </ul>
+      <a class="btn-outline" href="#" data-link="blog">블로그 전체 소식보기
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 5.5l6.5 6.5-6.5 6.5"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="reserve" id="reserve" aria-labelledby="rsv-title">
+    <div class="reserve-bar" aria-hidden="true"></div>
+    <div class="reserve-body">
+      <h2 id="rsv-title">1:1 상담예약하기</h2>
+      <p class="rsv-sub">가장 합리적인 견적을 위해 사전<br>예약을 남겨주세요.</p>
+
+      <form id="form" novalidate>
+        <div class="field">
+          <label for="f-name">고객 성함 (필수)</label>
+          <input type="text" id="f-name" name="name" autocomplete="name" maxlength="20" placeholder="성함을 입력해주세요">
+          <p class="err" id="err-name" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="f-phone">연락처 (필수)</label>
+          <input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="numeric" maxlength="13" placeholder="010-0000-0000">
+          <p class="err" id="err-phone" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="f-type">구매 유형 (필수)</label>
+          <div class="select">
+            <select id="f-type" name="type">
+              <option value="" selected disabled>구매 유형을 반드시 선택해주세요</option>
+              <option>신혼·웨딩</option>
+              <option>신축 입주·이사</option>
+              <option>가전 교체</option>
+              <option>신규 구매</option>
+              <option>기타</option>
+            </select>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9.5l5-5 5 5M7 14.5l5 5 5-5"/></svg>
+          </div>
+          <p class="err" id="err-type" role="alert" hidden></p>
+        </div>
+
+        <div class="extras">
+          <button type="button" class="extras-btn" id="extras-btn" aria-expanded="false" aria-controls="extras-panel">
+            <span aria-hidden="true">🎁</span> 관심 품목 추가 (선택사항) <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <div id="extras-panel" hidden>
+            <fieldset style="border:0;margin:0;padding:0;min-width:0">
+              <legend class="sr">관심 품목</legend>
+              <div class="chips">
+                <label class="chip"><input type="checkbox" name="items" value="냉장고"><span>냉장고</span></label>
+                <label class="chip"><input type="checkbox" name="items" value="세탁기·건조기"><span>세탁기·건조기</span></label>
+                <label class="chip"><input type="checkbox" name="items" value="TV·영상"><span>TV·영상</span></label>
+                <label class="chip"><input type="checkbox" name="items" value="에어컨"><span>에어컨</span></label>
+                <label class="chip"><input type="checkbox" name="items" value="청소기"><span>청소기</span></label>
+                <label class="chip"><input type="checkbox" name="items" value="주방가전"><span>주방가전</span></label>
+                <label class="chip"><input type="checkbox" name="items" value="컴퓨터·모바일"><span>컴퓨터·모바일</span></label>
+                <label class="chip"><input type="checkbox" name="items" value="기타"><span>기타</span></label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="consent">
+          <label class="check">
+            <input type="checkbox" id="f-agree" name="agree">
+            <span class="check-text">개인정보 수집 및 이벤트 알림<br>수신 동의 (필수)</span>
+          </label>
+          <button type="button" class="help" id="help" aria-label="개인정보 수집 및 이용 안내 보기">?</button>
+        </div>
+        <p class="err" id="err-agree" role="alert" hidden></p>
+
+        <button type="submit" class="submit" id="submit">예약 신청 및 단독 혜택 받기</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- BENEFITS -->
+<main id="view-benefits" class="wrap" role="tabpanel" aria-labelledby="tab-benefits" hidden>
+  <section class="card" style="margin-top:30px" aria-labelledby="bn-title">
+    <h2 class="card-title" id="bn-title">행사 혜택 한눈에 보기</h2>
+    <p class="sec-sub">10월 2일(금) ~ 5일(월),<br>안산선부점에서만 만나는 혜택입니다.</p>
+    <div class="benefit-list">
+      <div class="benefit">
+        <div class="b-ic" aria-hidden="true">🏷️</div>
+        <div><h3>다품목 구매 지원금</h3><p>냉장고·세탁기·TV 등 여러 품목을 함께 구매하시면 브랜드별 추가 지원금이 적용됩니다.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="b-ic" aria-hidden="true">💳</div>
+        <div><h3>제휴카드 캐시백</h3><p>결제 금액대별로 제휴카드 캐시백 혜택을 받으실 수 있습니다.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="b-ic" aria-hidden="true">🏠</div>
+        <div><h3>신혼·입주 고객 특별 할인</h3><p>신혼·웨딩, 신축 입주 고객을 위한 단독 추가 할인을 준비했습니다.</p></div>
+      </div>
+      <div class="benefit">
+        <div class="b-ic" aria-hidden="true">🎁</div>
+        <div><h3>방문 고객 단독 혜택</h3><p>행사 기간 안산선부점을 방문하신 고객님께만 드리는 혜택입니다.</p></div>
+      </div>
+    </div>
+    <div class="notice">
+      <h3>유의사항</h3>
+      <ul>
+        <li>본 프로모션은 매장 상황에 따라 예고 없이 변동 및 조기 종료될 수 있습니다.</li>
+        <li>혜택별 세부 조건은 상담 시 자세히 안내해드립니다.</li>
+        <li>재고 및 브랜드별 지원 조건에 따라 일부 혜택이 다를 수 있습니다.</li>
+      </ul>
+    </div>
+    <div class="cta-ring" style="margin-top:26px">
+      <button type="button" class="cta-dark" data-go="reserve">상담예약하기</button>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <h2>롯데하이마트 안산선부점</h2>
+    <p>주소 : 경기도 안산시 단원구 선부광장로 41</p>
+    <p>전화 : <a href="tel:0314837400">031-483-7400</a></p>
+    <p class="disc">본 프로모션은 매장 상황에 따라 예고 없이 변동 및 조기 종료될 수 있습니다.</p>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="빠른 상담">
+  <div class="dock-in">
+    <button type="button" class="dock-main" data-go="reserve">상담예약하기</button>
+    <div class="dock-row">
+      <a class="dk kakao" href="#" data-link="kakao">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.8 5.3 4.6 6.7L5.7 21l4.1-2.3c.7.1 1.5.2 2.2.2 5.5 0 10-3.6 10-8s-4.5-8-10-8z" fill="#3A1D1D"/></svg>
+        카카오문의
+      </a>
+      <a class="dk naver" href="#" data-link="naver"><span class="nlogo" aria-hidden="true">N</span>네이버문의</a>
+      <a class="dk tel" href="tel:0314837400">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        전화문의
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="ovl" id="ovl" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-labelledby="dlg-title">
+    <h3 id="dlg-title"></h3>
+    <div id="dlg-body"></div>
+    <div class="dlg-actions" id="dlg-actions"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(() => {
+  'use strict';
+
+  // ===== 설정 (여기만 바꾸면 됩니다) =====
+  const CONFIG = {
+    eventStart: '2026-10-02T00:00:00+09:00',
+    eventEnd:   '2026-10-05T23:59:59+09:00',
+    // 예약 접수 주소(Google Apps Script 웹앱 URL). 비어 있으면 전화 안내가 표시됩니다.
+    webhookUrl: 'https://script.google.com/macros/s/AKfycbwq7OVb2UxGSvzqfxWhCa5y2uE03I0l-TWfv7sCwgfT0duLXWMSPAlKrg4ZtZVHhPpa/exec',
+    // 채널 링크. 비어 있으면 "준비 중" 안내가 표시됩니다.
+    links: { kakao: '', naver: '', blog: '', instagram: '', facebook: '' }
+  };
+  const TEL = 'tel:0314837400';
+
+  const $  = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const behavior = reduce ? 'auto' : 'smooth';
+
+  // ----- 화면 전환 (홈 / 상세 혜택) -----
+  const views = { home: $('#view-home'), benefits: $('#view-benefits') };
+  const tabs = $$('.tab');
+  function setView(name, toTop = true) {
+    Object.keys(views).forEach(k => { views[k].hidden = k !== name; });
+    tabs.forEach(t => {
+      const on = t.dataset.view === name;
+      t.classList.toggle('is-on', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    if (toTop) window.scrollTo({ top: 0, behavior });
+  }
+  tabs.forEach(t => t.addEventListener('click', () => setView(t.dataset.view)));
+  $$('[data-view-go]').forEach(b => b.addEventListener('click', () => setView(b.dataset.viewGo)));
+  $('#logo').addEventListener('click', e => { e.preventDefault(); setView('home'); });
+
+  function goReserve() {
+    if (views.home.hidden) setView('home', false);
+    requestAnimationFrame(() => $('#reserve').scrollIntoView({ behavior, block: 'start' }));
+  }
+  $$('[data-go="reserve"]').forEach(b => b.addEventListener('click', goReserve));
+
+  // ----- 카운트다운 -----
+  const pad = n => String(n).padStart(2, '0');
+  const hms = ms => {
+    const s = Math.floor(ms / 1000);
+    return pad(Math.floor(s / 3600)) + ':' + pad(Math.floor((s % 3600) / 60)) + ':' + pad(s % 60);
+  };
+  const DAY = 864e5;
+  function tick() {
+    const now = Date.now();
+    const start = +new Date(CONFIG.eventStart);
+    const end = +new Date(CONFIG.eventEnd);
+    const label = $('#cd-label'), time = $('#cd-time');
+    if (now < start) {
+      const diff = start - now;
+      label.textContent = '행사 시작까지 D-' + (Math.floor(diff / DAY) + 1);
+      time.hidden = false; time.textContent = hms(diff % DAY);
+    } else if (now <= end) {
+      const diff = end - now, d = Math.floor(diff / DAY);
+      label.textContent = d > 0 ? '행사 종료까지 D-' + d : '오늘 행사 종료까지';
+      time.hidden = false; time.textContent = hms(diff % DAY);
+    } else {
+      label.textContent = '행사가 종료되었습니다';
+      time.hidden = true;
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // ----- 토스트 / 다이얼로그 -----
+  let toastTimer;
+  function toast(msg) {
+    const t = $('#toast');
+    t.textContent = msg; t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { t.hidden = true; }, 2800);
+  }
+  let lastFocus = null;
+  function showDialog({ title, paragraphs = [], list = [], actions = [] }) {
+    lastFocus = document.activeElement;
+    $('#dlg-title').textContent = title;
+    const body = $('#dlg-body'); body.textContent = '';
+    paragraphs.forEach(t => { const p = document.createElement('p'); p.textContent = t; body.appendChild(p); });
+    if (list.length) {
+      const ul = document.createElement('ul');
+      list.forEach(t => { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+      body.appendChild(ul);
+    }
+    const act = $('#dlg-actions'); act.textContent = '';
+    actions.forEach(a => {
+      const el = document.createElement(a.href ? 'a' : 'button');
+      el.className = 'dbtn ' + (a.primary ? 'dbtn-primary' : 'dbtn-ghost');
+      el.textContent = a.label;
+      if (a.href) { el.href = a.href; el.addEventListener('click', closeDialog); }
+      else { el.type = 'button'; el.addEventListener('click', () => { closeDialog(); if (a.onClick) a.onClick(); }); }
+      act.appendChild(el);
+    });
+    $('#ovl').hidden = false;
+    document.body.style.overflow = 'hidden';
+    const first = act.querySelector('.dbtn-primary') || act.firstElementChild;
+    if (first) first.focus();
+  }
+  function closeDialog() {
+    $('#ovl').hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $('#ovl').addEventListener('click', e => { if (e.target.id === 'ovl') closeDialog(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#ovl').hidden) closeDialog(); });
+
+  // ----- 채널 링크 -----
+  $$('[data-link]').forEach(a => {
+    const url = CONFIG.links[a.dataset.link];
+    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
+    else a.addEventListener('click', e => { e.preventDefault(); toast('채널 연결을 준비 중이에요. 전화로 문의해주세요.'); });
+  });
+
+  // ----- 예약 폼 -----
+  const f = { name: $('#f-name'), phone: $('#f-phone'), type: $('#f-type'), agree: $('#f-agree') };
+
+  f.phone.addEventListener('input', () => {
+    const d = f.phone.value.replace(/\D/g, '').slice(0, 11);
+    let out = d;
+    if (d.length > 3) {
+      out = d.length === 10
+        ? d.slice(0, 3) + '-' + d.slice(3, 6) + '-' + d.slice(6)
+        : d.slice(0, 3) + '-' + d.slice(3, 7) + (d.length > 7 ? '-' + d.slice(7) : '');
+    }
+    f.phone.value = out;
+  });
+
+  function setErr(key, msg) {
+    const el = $('#err-' + key), inp = f[key];
+    if (msg) { el.textContent = msg; el.hidden = false; inp.setAttribute('aria-invalid', 'true'); }
+    else { el.hidden = true; inp.removeAttribute('aria-invalid'); }
+    return !msg;
+  }
+  ['name', 'phone'].forEach(k => f[k].addEventListener('input', () => setErr(k, '')));
+  ['type', 'agree'].forEach(k => f[k].addEventListener('change', () => setErr(k, '')));
+
+  function validate() {
+    const digits = f.phone.value.replace(/\D/g, '');
+    const checks = [
+      ['name',  f.name.value.trim().length < 2 ? '성함을 2자 이상 입력해주세요.' : ''],
+      ['phone', !/^01[016789]\d{7,8}$/.test(digits) ? '연락처를 010-0000-0000 형식으로 입력해주세요.' : ''],
+      ['type',  !f.type.value ? '구매 유형을 선택해주세요.' : ''],
+      ['agree', !f.agree.checked ? '개인정보 수집 및 이용에 동의해주세요.' : '']
+    ];
+    let firstBad = null;
+    checks.forEach(([k, m]) => { if (!setErr(k, m) && !firstBad) firstBad = k; });
+    if (firstBad) f[firstBad].focus();
+    return !firstBad;
+  }
+
+  const eb = $('#extras-btn'), ep = $('#extras-panel');
+  eb.addEventListener('click', () => {
+    const open = ep.hidden;
+    ep.hidden = !open;
+    eb.setAttribute('aria-expanded', String(open));
+  });
+
+  $('#help').addEventListener('click', () => showDialog({
+    title: '개인정보 수집·이용 안내',
+    list: [
+      '수집 항목: 성함, 연락처, 구매 유형, 관심 품목',
+      '이용 목적: 상담 예약 확인, 행사 및 혜택 안내',
+      '보유 기간: 이용 목적 달성 후 지체 없이 파기',
+      '동의를 거부하실 수 있으나, 거부 시 상담 예약 접수가 어렵습니다.'
+    ],
+    actions: [{ label: '확인', primary: true }]
+  }));
+
+  function resetForm() {
+    $('#form').reset();
+    ['name', 'phone', 'type', 'agree'].forEach(k => setErr(k, ''));
+    ep.hidden = true; eb.setAttribute('aria-expanded', 'false');
+  }
+
+  $('#form').addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!validate()) return;
+    const btn = $('#submit');
+    btn.disabled = true; btn.textContent = '접수 중...';
+
+    const payload = {
+      store: '롯데하이마트 안산선부점',
+      name: f.name.value.trim(),
+      phone: f.phone.value,
+      type: f.type.value,
+      items: $$('input[name="items"]:checked').map(i => i.value),
+      agreed: true,
+      submittedAt: new Date().toISOString()
+    };
+
+    let state = 'offline';
+    if (CONFIG.webhookUrl) {
+      try {
+        await fetch(CONFIG.webhookUrl, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+        state = 'sent';
+      } catch (_) { state = 'error'; }
+    }
+
+    btn.disabled = false; btn.textContent = '예약 신청 및 단독 혜택 받기';
+
+    if (state === 'sent') {
+      showDialog({
+        title: '예약 신청이 접수되었어요',
+        paragraphs: [payload.name + '님, 확인 후 안산선부점에서 연락드리겠습니다.'],
+        actions: [{ label: '확인', primary: true }]
+      });
+      resetForm();
+    } else if (state === 'error') {
+      showDialog({
+        title: '전송에 실패했어요',
+        paragraphs: ['잠시 후 다시 시도하시거나, 전화로 예약해주세요.'],
+        actions: [{ label: '전화로 예약하기 031-483-7400', primary: true, href: TEL }, { label: '닫기' }]
+      });
+    } else {
+      showDialog({
+        title: '온라인 접수를 준비 중이에요',
+        paragraphs: ['지금은 온라인 예약이 접수되지 않아요. 전화로 남겨주시면 바로 상담해드릴게요.'],
+        actions: [{ label: '전화로 예약하기 031-483-7400', primary: true, href: TEL }, { label: '닫기' }]
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>
