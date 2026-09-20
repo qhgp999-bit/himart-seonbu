@@ -466,8 +466,24 @@ a, button, .chip, .check { -webkit-tap-highlight-color: transparent; }
   .cta-dark, .submit, .dock-main, .dk, .btn-outline, .ch, .extras-btn, .dbtn, .help, .tab { transition: none; }
 }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set', 'autoConfig', 'false', '30285345267721379');
+fbq('init', '30285345267721379');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=30285345267721379&ev=PageView&noscript=1"></noscript>
 
 <header class="hdr">
   <div class="hdr-in">
@@ -814,6 +830,20 @@ a, button, .chip, .check { -webkit-tap-highlight-color: transparent; }
   });
 
   // ----- 예약 폼 -----
+  // 광고 출처(UTM) - 주소 뒤에 붙은 값을 예약과 함께 저장합니다.
+  function getUtm() {
+    const q = new URLSearchParams(location.search), out = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(k => {
+      const v = (q.get(k) || '').trim().slice(0, 60);
+      if (v) out[k] = v;
+    });
+    return out;
+  }
+  // Meta 픽셀 이벤트 (이름·연락처 등 입력 내용은 보내지 않습니다)
+  function track(name, params) {
+    try { if (typeof window.fbq === 'function') window.fbq('track', name, params || {}); } catch (_) {}
+  }
+
   const f = { name: $('#f-name'), phone: $('#f-phone'), type: $('#f-type'), agree: $('#f-agree') };
 
   f.phone.addEventListener('input', () => {
@@ -863,6 +893,7 @@ a, button, .chip, .check { -webkit-tap-highlight-color: transparent; }
       '수집 항목: 성함, 연락처, 구매 유형, 관심 품목',
       '이용 목적: 상담 예약 확인, 행사 및 혜택 안내',
       '보유 기간: 이용 목적 달성 후 지체 없이 파기',
+      '광고 성과 측정을 위해 이 페이지는 Meta 픽셀을 사용합니다.',
       '동의를 거부하실 수 있으나, 거부 시 상담 예약 접수가 어렵습니다.'
     ],
     actions: [{ label: '확인', primary: true }]
@@ -887,6 +918,7 @@ a, button, .chip, .check { -webkit-tap-highlight-color: transparent; }
       type: f.type.value,
       items: $$('input[name="items"]:checked').map(i => i.value),
       agreed: true,
+      utm: getUtm(),
       submittedAt: new Date().toISOString()
     };
 
@@ -905,6 +937,7 @@ a, button, .chip, .check { -webkit-tap-highlight-color: transparent; }
     btn.disabled = false; btn.textContent = '예약 신청 및 단독 혜택 받기';
 
     if (state === 'sent') {
+      track('Lead', { content_name: '상담예약' });
       showDialog({
         title: '예약 신청이 접수되었어요',
         paragraphs: [payload.name + '님, 확인 후 안산선부점에서 연락드리겠습니다.'],
