@@ -390,6 +390,81 @@ a { color: inherit; text-decoration: none; }
   .ovl { align-items: center; }
   .dlg { border-radius: 26px; }
 }
+
+/* Tactile buttons: raised at rest, pressed down on tap */
+:root { --edge-dark: #000; --edge-soft: #DBCB94; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --edge-dark: #B8AA88; --edge-soft: #56492F; }
+}
+:root[data-theme="dark"] { --edge-dark: #B8AA88; --edge-soft: #56492F; }
+
+a, button, .chip, .check { -webkit-tap-highlight-color: transparent; }
+.cta-dark, .submit, .dock-main, .dk, .btn-outline, .ch, .extras-btn, .dbtn, .help, .tab {
+  touch-action: manipulation;
+  transition: transform .08s ease-out, box-shadow .08s ease-out;
+}
+
+/* dark buttons (상담예약하기, 예약 신청) */
+.cta-dark, .submit {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 5px 0 var(--edge-dark), 0 11px 14px rgba(0,0,0,.20);
+}
+.cta-dark:active, .submit:active {
+  transform: translateY(4px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 1px 0 var(--edge-dark), 0 3px 5px rgba(0,0,0,.20);
+}
+
+/* red bar button */
+.dock { padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+.dock-row { margin-top: 10px; }
+.dock-main {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.28), 0 4px 0 var(--red-dark), 0 9px 14px var(--red-glow);
+}
+.dock-main:active {
+  transform: translateY(3px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 1px 0 var(--red-dark), 0 3px 5px var(--red-glow);
+}
+
+/* 카카오 / 네이버 / 전화 */
+.dk {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 3px 0 var(--dk-edge), 0 7px 10px rgba(0,0,0,.14);
+}
+.dk.kakao { --dk-edge: #C7AE12; }
+.dk.naver { --dk-edge: #348A44; }
+.dk.tel   { --dk-edge: #28664A; }
+.dk:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 1px 0 var(--dk-edge), 0 2px 4px rgba(0,0,0,.14);
+}
+
+/* outline buttons (자세한 혜택 전체보기, 블로그 전체 소식보기) */
+.btn-outline {
+  background: var(--surface);
+  box-shadow: 0 4px 0 var(--gold-2), 0 9px 14px rgba(120,90,20,.14);
+}
+.btn-outline:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--gold-2), 0 2px 4px rgba(120,90,20,.14);
+}
+
+/* channel link cards, extras toggle, help, tabs, dialog buttons */
+.ch, .extras-btn {
+  box-shadow: 0 4px 0 var(--edge-soft), 0 8px 12px rgba(120,90,20,.10);
+}
+.ch:active, .extras-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--edge-soft), 0 2px 4px rgba(120,90,20,.10);
+}
+.help { box-shadow: 0 2px 0 var(--edge-soft); }
+.help:active { transform: translateY(2px); box-shadow: 0 0 0 var(--edge-soft); }
+.tab.is-on { box-shadow: 0 2px 0 var(--edge-soft), 0 4px 8px rgba(120,90,20,.14); }
+.tab:active { transform: translateY(1px); }
+.dbtn-primary { box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 4px 0 var(--edge-dark); }
+.dbtn-ghost { box-shadow: 0 4px 0 var(--edge-soft); }
+.dbtn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--edge-soft); }
+.dbtn-primary:active { box-shadow: 0 1px 0 var(--edge-dark); }
+@media (prefers-reduced-motion: reduce) {
+  .cta-dark, .submit, .dock-main, .dk, .btn-outline, .ch, .extras-btn, .dbtn, .help, .tab { transition: none; }
+}
 </style>
 </head>
 <body>
